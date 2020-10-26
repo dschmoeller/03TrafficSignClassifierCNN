@@ -1,14 +1,9 @@
 # **Traffic Sign Recognition** 
 
-## Writeup
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
 
----
+## **Project Goals: **
 
-**Build a Traffic Sign Recognition Project**
-
-The goals / steps of this project are the following:
 * Load the data set (see below for links to the project data set)
 * Explore, summarize and visualize the data set
 * Design, train and test a model architecture
@@ -17,18 +12,73 @@ The goals / steps of this project are the following:
 * Summarize the results with a written report
 
 
-[//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+## Dataset Exploration
 
-## Rubric Points
+#### 1. Dataset Summary
+
+Numpy and python functions have been used in order to extract the following numbers from the given data set: 
+
+- Number of training examples: **34799**
+- Number of validation examples: **4410**
+- Number of testing examples: **12630**
+- Image data shape: **(32, 32, 32)** 
+- Number of classes: **43**
+
+
+
+#### 2. Exploratory Visualization
+
+A (random) sample from the training set is visualized below. Note that the quality of the image is not brilliant, due to the 32x32 pixel resolution. So, even for a human, classifying the sample as "Speed Limit 70 km/h" is not a trivial. 
+
+[]: 
+
+
+
+## Design and Test a Model Architecture
+
+#### 1. Preprocessing
+
+lkfldfjdlsf
+
+
+
+#### 2. Model Architecture
+
+kdljflkdsjfldsf
+
+
+
+#### 3. Model Training
+
+lkfldfjdlsf
+
+
+
+#### 2. Solution Approach
+
+kdljflkdsjfldsf
+
+
+
+## Test a Model on New Images
+
+#### 1. Acquiring New Images
+
+lkfldfjdlsf
+
+
+
+#### 2. Performance on New Images
+
+kdljflkdsjfldsf
+
+
+
+#### 3. Model Certainty - Softmax Proabilites
+
+lkfldfjdlsf
+
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
@@ -84,9 +134,9 @@ The difference between the original data set and the augmented data set is the f
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
+| Layer         		|     Description	        					|
+|:---------------------:|:---------------------------------------------:|
+| Input         		| 32x32x3 RGB image   							|
 | Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
@@ -95,7 +145,7 @@ My final model consisted of the following layers:
 | Softmax				| etc.        									|
 |						|												|
 |						|												|
- 
+
 
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
@@ -120,7 +170,7 @@ If a well known architecture was chosen:
 * What architecture was chosen?
 * Why did you believe it would be relevant to the traffic sign application?
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+
 
 ### Test a Model on New Images
 
@@ -137,9 +187,9 @@ The first image might be difficult to classify because ...
 
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
+| Image			        |     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| Stop Sign      		| Stop sign   									|
 | U-turn     			| U-turn 										|
 | Yield					| Yield											|
 | 100 km/h	      		| Bumpy Road					 				|
@@ -154,9 +204,9 @@ The code for making predictions on my final model is located in the 11th cell of
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .60         			| Stop sign   									|
 | .20     				| U-turn 										|
 | .05					| Yield											|
 | .04	      			| Bumpy Road					 				|
