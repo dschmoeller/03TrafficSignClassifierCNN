@@ -29,9 +29,15 @@ Numpy and python functions have been used in order to extract the following numb
 
 #### 2. Exploratory Visualization
 
-A (random) sample from the training set is visualized below. Note that the quality of the image is not brilliant, due to the 32x32 pixel resolution. So, even for a human, classifying the sample as "Speed Limit 70 km/h" is not a trivial. 
+A (random) sample from the training set is visualized below. Note that the quality of the image is not brilliant, due to the 32x32 pixel resolution. So, even for a human, classifying this sample correctly as "Speed Limit 70 km/h" is not a trivial. 
 
-[]: 
+[]: https://github.com/dschmoeller/03TrafficSignClassifierCNN/blob/master/writeupImages/TestSample.png
+
+
+
+Analysing the respective number of class labels within the training set can help to acquire some additional knowledge about the training set and the (Machine Learning) problem in general. The corresponding plot is visualized below and shows the class label distribution of the trainig set. In theory one would want to have an uniform distribution, which means that every single class has an identical number of samples in the trainig set. Wan we can learn from the plot below is for instance is that we could expect lower prediction accuracy for classes where we only have roughly 200 samples available for the training. This hasn´t necessarily be the case though, because the respective class can have very well distinguishable features so even a low number of test images can lead to a great prediction performance. Having that said, the point here is rather to understand i.e. to learn that for some classes it might be benefitical to add additional samples. 
+
+[]: https://github.com/dschmoeller/03TrafficSignClassifierCNN/blob/master/writeupImages/classDistributionTrainingSet.png
 
 
 
@@ -39,7 +45,27 @@ A (random) sample from the training set is visualized below. Note that the quali
 
 #### 1. Preprocessing
 
-lkfldfjdlsf
+Preprocessing is a vital step to make the input data (images in this case) comparable. This is crucial for the backpropagation step during training, where the gradients are calculated. There migth be training examples with a rather high resolution and high value variation. Those training samples would be more sensitive to the gradient descent than other training samples with lower resolution. That´s why a good and necessary practice is to standardize the data, so they have **zero mean** and **unit variance**. In this project, the **scale( )** functionality from the **preprocessing** module of **scikit-learn** was used to achieve this.  Due to the fact that the input image comprises three channels (RGB), standardization was applied to each single channel individually. The three channels have been stacked again afterwards. The corresponding code snippet is shown below. Note that preprocessing is not only be applied in the training step but also for later prediction. 
+
+```python
+from sklearn import preprocessing
+
+def normalizeData(inputFeatureSet):
+    X_norm = np.zeros_like(inputFeatureSet, np.float32)
+    for i, RGB in enumerate(inputFeatureSet): 
+        R_scaled = preprocessing.scale(RGB[:,:,0])
+        G_scaled = preprocessing.scale(RGB[:,:,1])
+        B_scaled = preprocessing.scale(RGB[:,:,2])
+        X_norm[i] = np.stack((R_scaled, G_scaled, B_scaled), axis=2) 
+    return X_norm
+
+# Normalize the data
+X_train_norm = normalizeData(X_train)
+X_valid_norm = normalizeData(X_valid)
+X_test_norm = normalizeData(X_test)
+```
+
+The standardized sample from above looks like this:
 
 
 
