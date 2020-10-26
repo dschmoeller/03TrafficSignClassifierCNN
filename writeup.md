@@ -67,11 +67,15 @@ X_test_norm = normalizeData(X_test)
 
 The standardized sample from above looks like this:
 
+[]: https://github.com/dschmoeller/03TrafficSignClassifierCNN/blob/master/writeupImages/TestSampleStandardized.png
+
 
 
 #### 2. Model Architecture
 
-kdljflkdsjfldsf
+Convolutional layers have to be proven to show good results for image classificaton problems. The reason for that is the fact that convolutions are like filters which can identify certain features in images, for instance lanes, edges and even shapes or objects in higher level filters. Also convolutions are cheaper than just applying brute force fully conntected layers. The reason for this is that the Neural Network rather learns the filter parameters of predefined filter structures rather than additionally building this structure using only fully conntected layers. That´s the reason why the model architecture of this project comprise three convolutional layers. In order to decrease the number of parameters, Max Pooling is applied.  The outcome of the three concatenated convolutional layers is flattened and feed into three fully conntected layers. Relu is consistently used through the entire architecure as activation function. An overview of the final model architecture is shown below. 
+
+
 
 
 
